@@ -31,6 +31,7 @@ class BuildIn(object):
 
         print('isinstance(1, int):', isinstance(1, int))
 
+        print('打印一个对象或类中的内容dir(object/Class):', dir(BuildIn))
 
 if __name__ == '__main__':
     buildIn = BuildIn()
