@@ -48,8 +48,23 @@ class Slice(object):
         print('strVal[-2:]:', strVal[-2:])
         print('strVal:', strVal)
         print('type(strVal[-2:]):', type(strVal[-2:]))
+    # 去除字符串首尾空格
+    def my_trim(self):
+        strVal = ' hello '
+        print(strVal)
+
+        if strVal[:1] == ' ':
+            print(' ')
+            strVal = strVal[1:]
+        if strVal[-1:] == ' ':
+            print(' ')
+            strVal = strVal[:-1]
+
+
+        print(strVal)
 
 if __name__ == '__main__':
     sliceDemo = Slice()
 
     sliceDemo.slice_get()
+    sliceDemo.my_trim()
