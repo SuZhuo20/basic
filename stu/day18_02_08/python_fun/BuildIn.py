@@ -33,6 +33,8 @@ class BuildIn(object):
 
         print('打印一个对象或类中的内容dir(object/Class):', dir(BuildIn))
 
+        print('list(range(10)):', list(range(10)))
+
 if __name__ == '__main__':
     buildIn = BuildIn()
 
