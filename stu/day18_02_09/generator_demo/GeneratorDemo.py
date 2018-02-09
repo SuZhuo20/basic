@@ -8,6 +8,8 @@
 #                   使用到的元素往往很少，从而造成内存浪费
 #       解决办法：
 #           1.记录列表中数据推算的算法，这样就不需要创建出完整的list，从而节约了内存，python中将这种一遍循环一个推算下个元素的机制成为生成器（generator）
+#       适用场景：
+#           1.当某些元素可以根据指定算法推算出来时就可以使用生成器
 class GeneratorDemo(object):
 
     # 创建生成器
@@ -21,6 +23,18 @@ class GeneratorDemo(object):
         print('type (x for x in range(10)):', type(genDemo))
         # genDemo中元素
         print('next(generatorObj):', next(genDemo))
+        # 使用for循环遍历generator中的所有元素
+        for num in genDemo:
+            print(num)
+
+    # 使用生成器实现斐波那契数列，定义一个
+    def fibonacci(self, max):
+        a, b, n = 0, 1, 0
+
+        while n < max:
+            yield b
+            a, b = b, a+b
+            n += 1
 
 if __name__ == '__main__':
     genDemo = GeneratorDemo()
