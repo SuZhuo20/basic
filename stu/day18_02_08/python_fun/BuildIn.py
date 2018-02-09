@@ -35,6 +35,8 @@ class BuildIn(object):
 
         print('list(range(10)):', list(range(10)))
 
+        print('将Iterable类型的对象转换成枚举类型enumerate(Iterable_obj):', enumerate([1, 2, 3]))
+
 if __name__ == '__main__':
     buildIn = BuildIn()
 
