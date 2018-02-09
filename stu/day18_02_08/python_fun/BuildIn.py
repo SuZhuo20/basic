@@ -39,6 +39,9 @@ class BuildIn(object):
 
         print('使用len计算数组中元素个数len(str/list...):', len('ABC'))
 
+        genList = (x for x in range(5))
+        print('使用next方法打印生成器（记录了算法）中的元素next(generatorObj):', next(genList))
+
 if __name__ == '__main__':
     buildIn = BuildIn()
 
