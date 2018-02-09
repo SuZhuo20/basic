@@ -37,6 +37,8 @@ class BuildIn(object):
 
         print('将Iterable类型的对象转换成枚举类型enumerate(Iterable_obj):', enumerate([1, 2, 3]))
 
+        print('使用len计算数组中元素个数len(str/list...):', len('ABC'))
+
 if __name__ == '__main__':
     buildIn = BuildIn()
 
