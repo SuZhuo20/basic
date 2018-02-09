@@ -68,11 +68,29 @@ class IterationDemo(object):
             print(eleIndex, '-', eleVal)
 
     # 对set使用迭代
+    print('set_iteration.....................................')
     def iteration_set(self):
-        pass
+        setVal = (1, 2, 4)
+        for val in setVal:
+            print(val)
 
+    # 使用迭代获取list中最大值和最小值，并以元组返回
+    def get_max_min(self):
+        listDemo = [0, 4, 9, 24]
+        maxVal = listDemo[0]
+        minVal = listDemo[0]
+
+        for num in listDemo:
+            if maxVal < num:
+                maxVal = num
+            if minVal > num:
+                minVal = num
+
+        return (maxVal, minVal)
 
 if __name__ == '__main__':
     iterationDemo = IterationDemo()
 
     iterationDemo.iteration_dict()
+    print(iterationDemo.get_max_min())
+    iterationDemo.iteration_set()
