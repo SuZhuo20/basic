@@ -12,3 +12,18 @@
         4.生成器都是Iterator对象，但是list、tuple、dict、set、str是Iterable但是它们都
             不是Iterator
         5.可以通过iter()函数将list、tuple、dict、set、str变成Iterator：iter([])
+        6.迭代器说明：
+            为什么list、dict、str等数据类型不是Iterator？
+                这是因为Python的Iterator对象表示的是一个数据流，Iterator对象可以被next()
+                函数调用并不断返回下一个数据，直到没有数据时抛出StopIteration错误。可以把这
+                个数据流看做是一个有序序列，但我们却不能提前知道序列的长度，只能不断通过next()
+                函数实现按需计算下一个数据，所以Iterator的计算是惰性的，只有在需要返回下一个数
+                据时它才会计算。
+                Iterator甚至可以表示一个无限大的数据流，例如全体自然数。而使用list是永远不可能
+                存储全体自然数的   －－引用廖雪峰python3教程
+### 3.总结：
+        1.凡是可以作用于for循环的对象都是Iterable类型；
+        2.凡是可作用于next()函数的对象都是Iterator对象，它们表示一个惰性计算的序列；
+        3.集合数据类型如list、tuple、dict、set、str是Iterable类型，但它们不是Iterator类型，
+            不过可以通过iter()函数获得一个Iterator对象；
+
