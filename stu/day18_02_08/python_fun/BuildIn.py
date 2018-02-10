@@ -3,6 +3,8 @@
 # @Author: Zhuozhuo.Geng
 # @Date  : 2018/2/8
 # @Desc  : 内置函数
+from collections import Iterator
+
 class BuildIn(object):
 
     # python内置函数
@@ -41,6 +43,8 @@ class BuildIn(object):
 
         genList = (x for x in range(5))
         print('使用next方法打印生成器（记录了算法）中的元素next(generatorObj):', next(genList))
+
+        print('使用iter(iterable对象)将Iterable对象转换成Iterator对象:', isinstance(iter([1, 2, 3]), Iterator))
 
 if __name__ == '__main__':
     buildIn = BuildIn()
