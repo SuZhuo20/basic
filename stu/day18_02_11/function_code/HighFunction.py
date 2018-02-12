@@ -27,7 +27,6 @@ class HighFunction(object):
     # reduce函数:
     # reduce(funObj, IterableObj),funObj：函数对象，IterableObj：Iterable对象
     #   1.作用：合并，根据fun函数将集合中元素进行合并
-    #   2.
     def reduce_demo(self):
         listDemo = list(range(1, 5))
         reduceVal = reduce(lambda x, y: x+y, listDemo)
