@@ -45,9 +45,72 @@ class HighFunction(object):
         print('type(strInt):', type(strInt))
         print('strInt:', strInt)
 
+    # 将单词首字母大写，其余单词小写
+    def str_change(self):
+        listStr = ['adam', 'LISA', 'barT']
+
+        print(isinstance(map(lambda x: x.capitalize(), listStr), Iterator))
+        print(list(map(lambda x: x.capitalize(), listStr)))
+
+    # filter函数
+    # filter(funObj, IterableObj), funObj:函数对象，IterableObj:Iterable对象
+    #   1.作用：把传入的函数作用于Iterable中的每个元素，然后根据返回值是True或False决定保留还是丢弃该元素
+    def fileter_demo(self):
+        listDemo = list(range(1,10))
+        print(type(range(1, 10)))
+        print(isinstance(range(1, 10), Iterator))
+        print(isinstance(range(1, 10), tuple))
+        print(isinstance(range(1, 10), set))
+        print(isinstance(range(1, 10), range))
+
+        # 筛选出偶数
+        print(type(filter(lambda x: x%2==0, listDemo)))
+        print(isinstance(filter(lambda x: x%2==0, listDemo), Iterator))
+        print(list(filter(lambda x: x%2==0, listDemo)))
+
+    # 把list中空值和空字符串删除
+    def not_empty(self):
+        listStr = ['A', ' ', None, ' ABC ']
+        print('filter(lambda x: x and x.strip()):', list(filter(lambda x: x and x.strip(), listStr)))
+
+    # # 求素数
+    # # 1.构造一个奇数序列
+    # @staticmethod
+    # def odd_iter(self):
+    #     n = 1
+    #     while True:
+    #         n += 2
+    #         yield n
+    # # 2.过滤函数
+    # @staticmethod
+    # def not_divisible(self, n):
+    #     return lambda x: x%n > 0
+    #
+    # def primes(self):
+    #     # 第一个素数是2
+    #     yield 2
+    #     # 构造一个奇数序列
+    #     oddIter = HighFunction.odd_iter()
+    #
+    #     while True:
+    #         n = next(oddIter)
+    #         yield n
+    #         # 过滤掉集合中n的倍数
+    #         oddIter = filter(HighFunction.not_divisible(self, n), oddIter)
+
+
 if __name__ == '__main__':
     highFun = HighFunction()
 
     highFun.map_demo()
     highFun.reduce_demo()
     highFun.map_reduc_demo()
+    highFun.str_change()
+    highFun.fileter_demo()
+    highFun.not_empty()
+
+    # for n in highFun.primes():
+    #     if n < 100:
+    #         print(n)
+    #     else:
+    #         break
